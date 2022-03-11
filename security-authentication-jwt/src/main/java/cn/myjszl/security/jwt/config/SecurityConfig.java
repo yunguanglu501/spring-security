@@ -17,6 +17,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
+ * Spring Security全局配置
+ * 应用登录过滤器的配置 JwtAuthenticationSecurityConfig
+ * 将登录接口、令牌刷新接口放行，不需要拦截
+ * 配置AuthenticationEntryPoint、AccessDeniedHandler
+ * 禁用session，前后端分离+JWT方式不需要session
+ * 将token校验过滤器TokenAuthenticationFilter添加到过滤器链中，放在UsernamePasswordAuthenticationFilter之前。
  * @author 公众号：码猿技术专栏
  * @EnableGlobalMethodSecurity 开启权限校验的注解
  */

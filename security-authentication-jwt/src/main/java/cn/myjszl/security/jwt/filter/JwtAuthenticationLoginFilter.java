@@ -8,8 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * 自定义登录过滤器
  * @author 公众号：码猿技术专栏
- * 登录认证的filter，参照UsernamePasswordAuthenticationFilter，添加到这之前的过滤器
+ * 默认的过滤器是UsernamePasswordAuthenticationFilter,登录认证的filter，
+ * 参照UsernamePasswordAuthenticationFilter，添加到这之前的过滤器
+ * 定义了一个认证过滤器JwtAuthenticationLoginFilter，这个是用来登录的过滤器，
+ * 但是并没有注入加入Spring Security的过滤器链中，需要定义配置
  */
 public class JwtAuthenticationLoginFilter extends AbstractAuthenticationProcessingFilter {
 

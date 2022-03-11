@@ -18,6 +18,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 /**
  * @author 公众号：码猿技术专栏
  * 登录过滤器的配置类
+ * 上述定义了一个认证过滤器JwtAuthenticationLoginFilter，这个是用来登录的过滤器，
+ * 但是并没有注入加入Spring Security的过滤器链中，需要定义配置，
  */
 @Configuration
 public class JwtAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
