@@ -19,6 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ *
+ * 客户端请求头携带了token，服务端肯定是需要针对每次请求解析、校验token，因此必须定义一个Token过滤器，这个过滤器的主要逻辑如下：
+ * 从请求头中获取accessToken
+ * 对accessToken解析、验签、校验过期时间
+ * 校验成功，将authentication存入ThreadLocal中，这样方便后续直接获取用户详细信息。
  * @author 公众号：码猿技术专栏
  * 校验token的过滤器，直接获取header中的token进行校验，
  */

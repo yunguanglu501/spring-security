@@ -27,7 +27,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/oauth-auth-server?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai
     username: root
-    password: 4195460316
+    password: 123456
   jpa:
     show-sql: true # 默认false，在日志里显示执行的sql语句
     database: mysql

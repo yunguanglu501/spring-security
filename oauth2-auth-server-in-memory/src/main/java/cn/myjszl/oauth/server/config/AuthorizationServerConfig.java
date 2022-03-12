@@ -19,6 +19,10 @@ import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
+ * oauth2.0 认证中心相关配置类
+ * 不是所有配置类都可以作为OAuth2.0认证中心的配置类，需要满足以下两点：
+ * 继承AuthorizationServerConfigurerAdapter
+ * 标注 @EnableAuthorizationServer 注解
  * @author  公众号：码猿技术专栏
  * 认证中心的配置
  * `@EnableAuthorizationServer`：这个注解标注这是一个认证中心
@@ -29,7 +33,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     /**
-     * 令牌存储策略
+     * 令牌存储策略(令牌存入哪里)
      */
     @Autowired
     private TokenStore tokenStore;
@@ -62,6 +66,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 //客户端秘钥
                 .secret(new BCryptPasswordEncoder().encode("123"))
                 //资源id，唯一，比如订单服务作为一个资源,可以设置多个
+                //给客户端分配的资源权限，对应的是资源服务，比如订单这个微服务就可以看成一个资源，作为客户端肯定不是所有资源都能访问。
                 .resourceIds("res1")
                 //授权模式，总共四种，1. authorization_code（授权码模式）、password（密码模式）、client_credentials（客户端模式）、implicit（简化模式）
                 //refresh_token并不是授权模式，
