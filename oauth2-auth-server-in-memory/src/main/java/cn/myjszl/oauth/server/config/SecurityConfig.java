@@ -34,6 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
+     *
+     * 由于需要验证授权码模式，因此开启表单提交模式，所有url都需要认证
      * 配置安全拦截策略
      * @param http
      * @throws Exception

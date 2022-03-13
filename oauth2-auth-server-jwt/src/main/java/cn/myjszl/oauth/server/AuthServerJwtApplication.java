@@ -6,7 +6,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
-public class AuthServerJwtApplication {
+public class  AuthServerJwtApplication {
     public static void main(String[] args) {
         SpringApplication.run(AuthServerJwtApplication.class);
     }

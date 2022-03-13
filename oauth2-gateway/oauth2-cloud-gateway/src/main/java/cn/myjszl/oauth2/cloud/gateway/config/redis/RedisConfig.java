@@ -30,7 +30,7 @@ import java.util.Arrays;
 @Configuration
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 public class RedisConfig {
-	@Value("${spring.redis.host:127.0.0.1}")
+	@Value("${spring.redis.host:192.168.152.100}")
 	private String host;
 
 	@Value("${spring.redis.port:6379}")

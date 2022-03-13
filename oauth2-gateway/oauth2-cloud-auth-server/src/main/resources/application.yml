@@ -13,7 +13,7 @@ spring:
         # nacos的服务地址，nacos-server中IP地址:端口号
         server-addr: 127.0.0.1:8848
   redis:
-    host: 127.0.01
+    host: 127.0.0.1
     password:
     port: 6379
     timeout: 15000

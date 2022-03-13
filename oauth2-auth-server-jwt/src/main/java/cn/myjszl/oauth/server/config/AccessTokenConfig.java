@@ -15,6 +15,8 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 public class AccessTokenConfig {
     /**
      * JWT的秘钥
+     * JWT签名的秘钥，这里使用的是对称加密，资源服务中也要使用相同的秘钥进行校验和解析JWT令牌。
+     * 注意：实际工作中还是要使用非对称加密的方式，比较安全
      * TODO 实际项目中需要统一配置到配置文件中，资源服务也需要用到
      */
     private final static String SIGN_KEY="myjszl";
